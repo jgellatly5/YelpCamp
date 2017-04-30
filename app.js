@@ -9,6 +9,7 @@ var Comment = require("./models/comment");
 var User = require("./models/user");
 var seedDB = require("./seeds");
 
+// requiring routes
 var commentRoutes = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
@@ -17,7 +18,7 @@ mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-seedDB();
+// seedDB(); // seed the database
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
